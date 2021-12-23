@@ -1,12 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+// const { resolve } = require("path/posix");
 
-module.exports = (env, argv) => {
-  const isProduction = argv.mode === "production";
-  const config = {
+module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "./bundle.js",
+    path: path.resolve(__dirname, "review_build"),
+    filename: "[name].js",
   },
   module: {
     rules: [
@@ -16,11 +15,11 @@ module.exports = (env, argv) => {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -34,11 +33,3 @@ module.exports = (env, argv) => {
     hot: true,
   },
 };
-
-if (isProduction) {
-  config.plugins.push(new MiniCssExtractPlugin());
-}
-
-return config;
-};
-
