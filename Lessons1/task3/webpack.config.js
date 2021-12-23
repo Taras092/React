@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const { resolve } = require("path/posix");
+const path = require('path');
 
 module.exports = {
   entry: "./src/index.js",
