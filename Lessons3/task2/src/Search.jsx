@@ -12,7 +12,7 @@ import React, { Component } from "react";
 // );
 // }
 
-export class Search extends Component {
+export default class Search extends Component {
   render() {
     return (
       <div className="search">
