@@ -9,8 +9,8 @@ import "./index.css";
 
 const rootElement = document.querySelector('#root');
 
-const title = (
+const element = (
   <h1 class="title">Todo List</h1>
 );
 
-ReactDOM.render(title, rootElement);
+ReactDOM.render(element, rootElement);
