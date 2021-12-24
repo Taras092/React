@@ -1,7 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
-const rootElement = document.querySelector("#root");
 
 export const Search = (props) => {
   return (
@@ -14,5 +11,3 @@ export const Search = (props) => {
 </div>
 );
 }
-
-ReactDOM.render(<Search name="Tom"/>, rootElement);
