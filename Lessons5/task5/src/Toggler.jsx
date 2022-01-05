@@ -5,7 +5,7 @@ class Toggler extends Component {
   onButton(e) {
     if (e.target.textContent === "Off") {
       e.target.textContent = "On";
-    } else if(e.target.textContent = "On") {
+    } else if(e.target.textContent === "On") {
       e.target.textContent = "Off"
     }
   }
