@@ -8,16 +8,16 @@ class Counter extends React.Component {
       counter: 0,
     };
 
-    this.decrement = this.decrement.bind(this);
+    this.decrease = this.decrease.bind(this);
   }
 
-  decrement() {
+  decrease() {
     this.setState({
       counter: this.state.counter - 1,
     });
   }
 
-  increment = () => {
+  increase = () => {
     this.setState({
       counter: this.state.counter + 1,
     });
@@ -35,7 +35,7 @@ class Counter extends React.Component {
         <button
           data-action="decrease"
           class="counter__button"
-          onClick={this.decrement}
+          onClick={this.decrease}
         >
           -
         </button>
@@ -45,7 +45,7 @@ class Counter extends React.Component {
         <button
           data-action="increase"
           class="counter__button"
-          onClick={this.increment}
+          onClick={this.increase}
         >
           +
         </button>
