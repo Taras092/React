@@ -8,6 +8,7 @@ class Toggler extends Component {
       active: false,
     };
   }
+
   // onButton(e) {
   //   if (e.target.textContent === "Off") {
   //     e.target.textContent = "On";
@@ -18,14 +19,14 @@ class Toggler extends Component {
 
   setButton() {
     this.setState({
-      active: this.state.active ? 'On' : 'Off',
+      active: !this.state.active,
     })
   }
 
   render() {
     return (
       <div>
-        <button className="toggler" onClick={() => this.setButton()}>{this.state.active}</button>
+        <button className="toggler" onClick={() => this.setButton()}>{this.state.active ? 'On' : 'Off'}</button>
       </div>
     );
   }
