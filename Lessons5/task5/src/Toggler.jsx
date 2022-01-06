@@ -5,7 +5,7 @@ class Toggler extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: "Off",
+      active: false,
     };
   }
   // onButton(e) {
