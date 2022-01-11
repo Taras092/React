@@ -9,34 +9,46 @@ class Auth extends Component {
     super(props);
 
     this.state = {
-      isState: true
+      isLoadding: false,
+      isLoggedIn: false
     }
   }
 
-  handelLogin = () => {
+  handelLogin = async() => {
     this.setState({
-      isState: false,
+      isLoadding: true,
     });
+    await login();
+    this.setState({
+      isLoadding: false,
+      isLoggedIn: true
+    })
   };
 
   handelLoguot = () => {
     this.setState({
-      isState: true,
+      isLoggedIn: false,
     });
   };
 
   render() {
-    return (
-      <>
-      {this.state.isState ? (
-        <Login onLogin={this.handelLogin}/>
-      ) : (
-        <Logout onLogout={this.handelLoguot}/>
-      )
-      }
-      </>
-    );
+    const { isLoggedIn, isLoadding } = this.state;
+    if(isLoadding) {
+      return <Spinner size={100}/>
+    }
+    if(isLoggedIn) {
+      return <Logout onLogout={this.handelLoguot}/>
+    }
+    return <Login onLogin={this.handelLogin}/>
   }
 }
+
+async function login() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      return resolve();
+    }, 2000)
+  })
+} 
 
 export default Auth;
