@@ -17,7 +17,7 @@ const Transaction = ({ from, to, amount, rate, time }) => {
         {from} → {to}
       </span>
       <span className="transaction__rate">
-        {new Intl.NumberFormat().format(rate)}
+        {new Intl.NumberFormat('en-GB', {style: 'decimal'}).format(rate)}
       </span>
       <span className="transaction__amount">
         {new Intl.NumberFormat("en-GB", { maximumSignificantDigits: 3 }).format(
