@@ -13,23 +13,23 @@ class Status extends Component {
 
   onlineStatus = () => {
     this.setState({
-      isOnline: true,
+      isOnline: false,
     });
   };
 
   offlineStatus = () => {
     this.setState({
-      isOnline: false,
+      isOnline: true,
     });
   };
 
   render() {
     return (
       <div className="status">
-        {this.state.isOnline === false ? (
-          <Offline onClick={this.onlineStatus} />
+        {this.state.isOnline ? (
+          <Online onClick={this.onlineStatus} />
         ) : (
-          <Online onClick={this.offlineStatus} />
+          <Offline onClick={this.offlineStatus} />
         )}
       </div>
     );
