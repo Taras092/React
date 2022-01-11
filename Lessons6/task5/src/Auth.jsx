@@ -14,15 +14,21 @@ class Auth extends Component {
     }
   }
 
-  handelLogin = async() => {
+  handelLogin = () => {
     this.setState({
       isLoadding: true,
     });
-    await login();
-    this.setState({
-      isLoadding: false,
-      isLoggedIn: true
-    })
+    setTimeout(() => {
+      this.setState({
+        isLoadding: false,
+        isLoggedIn: true
+      })
+    }, 2000)
+    // await login();
+    // this.setState({
+    //   isLoadding: false,
+    //   isLoggedIn: true
+    // })
   };
 
   handelLoguot = () => {
@@ -43,12 +49,12 @@ class Auth extends Component {
   }
 }
 
-async function login() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      return resolve();
-    }, 2000)
-  })
-} 
+// async function login() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       return resolve();
+//     }, 2000)
+//   })
+// } 
 
 export default Auth;
