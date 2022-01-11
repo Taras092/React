@@ -26,10 +26,10 @@ class Status extends Component {
   render() {
     return (
       <div className="status">
-        {this.state.isOnline ? (
-          <Online onClick={this.onlineStatus} />
-        ) : (
+        {!this.state.isOnline ? (
           <Offline onClick={this.offlineStatus} />
+          ) : (
+          <Online onClick={this.onlineStatus} />
         )}
       </div>
     );
