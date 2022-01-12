@@ -13,7 +13,6 @@ class ConnectionStatus extends Component {
     window.addEventListener('online', this.onlineStatus);
     window.addEventListener('offline', this.onlineStatus);
     this.setStatus(navigator.onLine);
-    console.log(navigator.onLine);
   }
 
   componentWillUnmount() {
@@ -22,8 +21,7 @@ class ConnectionStatus extends Component {
   }
 
   onlineStatus = e => {
-    console.log(e.navigator.onLine);
-    this.setStatus(e.navigator.onLine);
+    this.setStatus(navigator.onLine);
   };
 
   setStatus = (online) => {
@@ -42,3 +40,4 @@ class ConnectionStatus extends Component {
 }
 
 export default ConnectionStatus;
+
