@@ -5,38 +5,44 @@ class ConnectionStatus extends Component {
     super(props);
 
     this.state = {
-      status: null,
+      online: true,
+      offline: null,
     };
 
-    console.log(this.state.status);
+    console.log(this.state);
   }
 
   componentDidMount() {
-    window.addEventListener('ononline', this.onOnline);
-    window.addEventListener('onoffline', this.ofOffline);
+    window.addEventListener('online', this.onlineStatus);
+    window.addEventListener('offline', this.onlineStatus);
+    const { ononline, onoffline } = window;
+    this.setStatus(ononline, onoffline);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('ononline', this.onOnline);
-    window.removeEventListener('onoffline', this.ofOffline);
+    window.removeEventListener('online', this.onlineStatus);
+    window.removeEventListener('offline', this.onlineStatus);
   }
 
-  onOnline = e => {
-    this.setState({
-      status: e.target,
-    });
-    console.log(this.state.status);
+  onlineStatus = e => {
+    const { ononline, onoffline } = e.target;
+
+    this.setStatus(ononline, onoffline);
   };
 
-  ofOffline = e => {
+  setStatus = (online, offline) => {
     this.setState({
-      status: e.target,
+      online,
+      offline,
     });
-    console.log(this.state.status);
   };
 
   render() {
-    return <div className="status status_offline">{this.state.status}</div>;
+    const { online, ofline } = this.state;
+    if (online) {
+      return <div className="status ">Online</div>;
+    }
+    return <div className="status status_offline">Offline</div>;
   }
 }
 
