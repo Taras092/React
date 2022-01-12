@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Dimension extends Component {
+class Dimensions extends Component {
   constructor(props) {
     super(props);
 
@@ -18,7 +18,7 @@ class Dimension extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('resize', this.onResize);
   }
 
   onResize = e => {
@@ -36,4 +36,4 @@ class Dimension extends Component {
   }
 }
 
-export default Dimension;
+export default Dimensions;
