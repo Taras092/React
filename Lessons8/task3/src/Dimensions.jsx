@@ -32,7 +32,7 @@ class Dimension extends Component {
     document.title = `${innerWidth} x ${innerHeight}`;
   };
   render() {
-    return <div class="dimensions">{`${this.state.width}px - ${this.state.height}`}</div>;
+    return <div class="dimensions">{`${this.state.width}px - ${this.state.height}px`}</div>;
   }
 }
 
