@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Transaction from "./Transaction";
+import React, { Component } from 'react';
+import Transaction from './Transaction';
 
 class TransactionsList extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class TransactionsList extends Component {
     transactionsList = this.props.transactions.slice();
     return (
       <ul className="transactions">
-        {transactionsList.map((transactionList) => (
+        {transactionsList.map(transactionList => (
           <Transaction key={transactionList.id} {...transactionList} />
         ))}
       </ul>
