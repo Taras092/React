@@ -11,7 +11,6 @@ class Search extends Component {
   }
 
   handleChange = event => {
-    event.persist();
     this.setState({
       value: event.target.value,
     })
@@ -34,7 +33,8 @@ class Search extends Component {
           value={this.state.value}
           className="search__input"
         />
-        <button className="search__button" type="submit">Search</button>
+        <button className="search__button" 
+        type="submit">Search</button>
       </form>
     );
   }
