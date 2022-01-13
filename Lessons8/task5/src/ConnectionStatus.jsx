@@ -6,8 +6,6 @@ class ConnectionStatus extends Component {
 
     this.state = {
       online: true,
-      styleName: 'status',
-      text: 'online',
     };
   }
 
@@ -29,22 +27,21 @@ class ConnectionStatus extends Component {
   setOnlineStatus = () => {
     this.setState({
       online: true,
-      styleName: 'status',
-      text: 'online',
     });
   };
 
   setOfflineStatus = () => {
     this.setState({
       online: false,
-      styleName: 'status status_offline',
-      text: 'offline',
     });
   };
 
   render() {
-    const { styleName, text } = this.state;
-    return <div className={styleName}>{text}</div>;
+    const { online } = this.state;
+    if(online) {
+      return <div className="status">online</div>;
+    }
+    return <div className="status status_offline">offline</div>;
   }
 }
 
