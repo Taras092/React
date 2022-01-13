@@ -30,7 +30,7 @@ class ConnectionStatus extends Component {
     this.setState({
       online,
       styleName: online ? 'status' : 'status status_offline',
-      text: online ? 'online' : 'offline',
+      text: online ? 'online' : 'Offline',
     });
   };
 
