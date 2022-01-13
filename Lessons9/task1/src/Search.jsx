@@ -26,7 +26,10 @@ class Search extends Component {
 
   render() {
     return (
-      <form className="search">
+      <form 
+      className="search" 
+      onSubmit={this.search}
+      >
         <input
           type="text"
           onChange={this.handleChange}
@@ -34,7 +37,6 @@ class Search extends Component {
           className="search__input"
         />
         <button 
-        onClick={this.search} 
         className="search__button" 
         type="submit">
           Search
