@@ -4,13 +4,9 @@ import './index.scss';
 import Filter from './Filter';
 
 class UserList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      value: '',
-    };
-  }
+  state = {
+    value: '',
+  };
 
   handleChange = event => {
     this.setState({
