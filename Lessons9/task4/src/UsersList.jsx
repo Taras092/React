@@ -3,7 +3,7 @@ import User from './User';
 import './index.scss';
 import Filter from './Filter';
 
-class UserList extends Component {
+class UsersList extends Component {
   state = {
     value: '',
   };
@@ -39,4 +39,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default UsersList;
