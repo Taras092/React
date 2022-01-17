@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShoppingCart from './ShopingCart';
+import ShoppingCart from './ShoppingCart';
 import Profile from './Profile';
 
 class App extends Component {
