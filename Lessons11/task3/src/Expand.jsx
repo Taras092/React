@@ -16,11 +16,11 @@ class Expand extends Component {
       <div className="expand border">
         <div className="expand__header">
           <span className="expand__title">{this.props.title}</span>
-          <button className="expand__toggle-btn">
+          <button className="expand__toggle-btn" onClick={this.toggleContent}>
             {this.state.isOpen ? (
-              <i className="fas fa-chevron-up" onClick={this.toggleContent}></i>
+              <i className="fas fa-chevron-up"></i>
             ) : (
-              <i className="fas fa-chevron-down" onClick={this.toggleContent}></i>
+              <i className="fas fa-chevron-down"></i>
             )}
           </button>
         </div>
