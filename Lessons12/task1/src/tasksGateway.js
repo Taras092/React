@@ -1,6 +1,7 @@
 const baseUrl = 'https://61b8921e64e4a10017d19082.mockapi.io/api/v1/tasks';
 
 export const createTask = taskData => {
+  console.log(taskData);
   return fetch(baseUrl, {
     method: 'POST',
     headers: {

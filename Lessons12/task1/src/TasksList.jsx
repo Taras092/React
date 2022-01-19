@@ -35,7 +35,6 @@ class TasksList extends Component {
       text,
       done: !done,
     };
-
     updateTask(id, updatedTask).then(() => this.fetchTasks());
   };
 
