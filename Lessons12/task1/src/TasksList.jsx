@@ -24,6 +24,7 @@ class TasksList extends Component {
     const newTask = {
       text,
       done: false,
+      createDate: new Date().toISOString(),
     };
 
     createTask(newTask).then(() => this.fetchTasks());
