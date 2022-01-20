@@ -1,11 +1,10 @@
 const baseUrl = 'https://61b8921e64e4a10017d19082.mockapi.io/api/v1/tasks';
 
 export const createTask = taskData => {
-  console.log(taskData);
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json;utc-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   }).then(response => {
@@ -29,7 +28,7 @@ export const updateTask = (taskId, taskData) => {
   return fetch(`${baseUrl}/${taskId}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json;utc-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   }).then(response => {
