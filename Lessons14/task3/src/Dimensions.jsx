@@ -14,10 +14,14 @@ const Dimensions = () => {
       setDimension({ width: innerWidth, heigth: innerHeight });
     }
     window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   const { width, heigth } = dimensions;
-  return <div class="dimensions">{`${width}px - ${heigth}px`}</div>;
+  return <div className="dimensions">{`${width}px - ${heigth}px`}</div>;
 };
 
 export default Dimensions;
