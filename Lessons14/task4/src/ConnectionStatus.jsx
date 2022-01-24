@@ -37,16 +37,27 @@ const ConnectionStatus = () => {
     const setOnlineStatus = e => {
       setPageStatus(navigator.onLine);
     };
-
     window.addEventListener('online', setOnlineStatus);
-    window.addEventListener('offline', setOnlineStatus);
-    setOnlineStatus();
+      setOnlineStatus();
+    
 
     return () => {
       window.removeEventListener('online', setOnlineStatus);
-      window.removeEventListener('offline', setOnlineStatus);
     };
   }, []);
+
+    useEffect(() => {
+      const setOfflineStatus = e => {
+        setPageStatus(navigator.onLine);
+      };
+      window.addEventListener('offline', setOfflineStatus);
+        setOfflineStatus();
+
+
+      return () => {
+        window.removeEventListener('offline', setOfflineStatus);
+      };
+    }, []);
 
   if (isOnline) {
     return <div className="status">online</div>;
