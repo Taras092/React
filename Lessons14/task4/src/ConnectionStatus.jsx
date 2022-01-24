@@ -5,8 +5,6 @@ const ConnectionStatus = () => {
 
   useEffect(() => {
     const setOnlineStatus = e => {
-      console.log(e);
-      console.log(navigator.onLine);
       setPageStatus(navigator.onLine);
     };
     const setOfflineStatus = e => {
